@@ -121,6 +121,6 @@ STATIC_URL = '/static/'
 
 
 try:
-    from .localsettings import *
+    from .local_settings import *
 except ImportError:
     pass
