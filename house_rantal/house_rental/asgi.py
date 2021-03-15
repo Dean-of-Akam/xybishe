@@ -1,5 +1,5 @@
 """
-ASGI config for house_rantal project.
+ASGI config for house_rental project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.asgi import get_asgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'house_rantal.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'house_rental.settings')
 
 application = get_asgi_application()
