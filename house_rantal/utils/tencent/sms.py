@@ -2,6 +2,8 @@ import ssl
 # ssl._create_default_https_context = ssl._create_unverified_context
 from qcloudsms_py import SmsMultiSender, SmsSingleSender
 from qcloudsms_py.httpclient import HTTPError
+
+
 def send_sms_single(phone_num, template_id, template_param_list):
     """
     单条发送短信
@@ -19,6 +21,8 @@ def send_sms_single(phone_num, template_id, template_param_list):
     except HTTPError as e:
         response = {'result': 1000, 'errmsg': "网络异常发送失败"}
     return response
+
+
 # def send_sms_multi(phone_num_list, template_id, param_list):
 #     """
 #     批量发送短信
@@ -39,5 +43,5 @@ def send_sms_single(phone_num, template_id, template_param_list):
 if __name__ == '__main__':
     result1 = send_sms_single("15131255089", 548760, [666, ])
     print(result1)
-    result2 = send_sms_single( ["15131255089", "15131255089", "15131255089", ],548760, [999, ])
+    result2 = send_sms_single(["15131255089", "15131255089", "15131255089", ], 548760, [999, ])
     print(result2)
