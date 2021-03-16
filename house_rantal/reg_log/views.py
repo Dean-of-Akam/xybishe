@@ -16,6 +16,11 @@ class RegisterModelForm(forms.ModelForm):
         model = models.UserInfo
         fields = "__all__"
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        for name, field in self.fields.items():
+            field.widget.attrs['placeholder'] = field.label
+
 
 def re_lo(request):
     form = RegisterModelForm()

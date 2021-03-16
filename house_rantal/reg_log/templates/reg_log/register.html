@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 		<link rel="stylesheet" type="text/css" href="{% static 'reg_log/style.css' %}">
 		<title>登录界面</title>
@@ -13,9 +13,24 @@
 			<div class="form-container sign-up-container">
 				<form action="#">
 					<h1>Create Account</h1>
-					<input type="text" placeholder="Name" />
-					<input type="email" placeholder="Email" />
-					<input type="password" placeholder="Password" />
+<!--					<input type="text" placeholder="Name" />-->
+<!--					<input type="email" placeholder="Email" />-->
+<!--					<input type="password" placeholder="Password" />-->
+					{% for field in form %}
+					{% if field.name == 'code' %}
+					<div>
+						<div style="width : 50%; float : left" >{{ field }}</div>
+						<div style="width : 50%; float : left" >
+<!--							<button style="height:50%;width:83%;font-weight:normal">获取验证码</button>-->
+							<input type="button" style="background-color:#2ecc71;border-radius:8px;color:white" value="获取验证码">
+						</div>
+					</div>
+
+
+					{% else %}
+						{{ field }}
+					{% endif %}
+					{% endfor %}
 					<button>Sign Up</button>
 				</form>
 			</div>
